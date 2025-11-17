@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, isFulfilled } from "@reduxjs/toolkit"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import * as api from "../api";
 
 export const getPosts = createAsyncThunk ("posts/getPosts", async () => {
@@ -17,3 +17,5 @@ const postSlice = createSlice ({
 
 
 }) 
+
+export default postSlice.reducer;
