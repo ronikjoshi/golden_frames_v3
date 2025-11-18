@@ -6,6 +6,11 @@ export const getPosts = createAsyncThunk ("posts/getPosts", async () => {
     return data;
 });
 
+export const createPost = createAsyncThunk ("posts/createPost", async (postData) => {
+    const {data} = await api.createPost(postData);
+    return data;
+})
+
 const postSlice = createSlice ({
     name: "posts",
     initialState: [],
@@ -13,6 +18,9 @@ const postSlice = createSlice ({
     extraReducers: (builder) => {
         builder
             .addCase(getPosts.fulfilled, (state, action) => action.payload)
+            .addCase(createPost.fulfilled, (state, action) => {
+                state.push(action.payload);
+            })
     }
 
 
