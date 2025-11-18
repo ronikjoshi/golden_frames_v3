@@ -1,6 +1,6 @@
 import React from "react";
-import Post from "./Post/Post.js"
-import { styles } from "./styles.js";
+import Post from "./Post/Post"
+import { styles } from "./styles";
 import { useSelector } from "react-redux";
 
 const Posts = () => {
