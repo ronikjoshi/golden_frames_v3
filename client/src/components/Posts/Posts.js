@@ -17,7 +17,7 @@ const Posts = () => {
                             <Post post={post} setCurrentId={setCurrentId} />
                         </Grid>
             ))}
-        </Grid>
+                </Grid>
             )
         )
 

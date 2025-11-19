@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@mui/material";
 import memories from "./images/memories.png";
 import Form from "./components/Form/Form";
@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { getPosts } from "./features/postsSlice";
 
 const App = () => {
+
+    const [currentId, setCurrentId] = useState(null);
 
     const dispatch = useDispatch();
 
