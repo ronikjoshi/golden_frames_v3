@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { styles } from "./styles";
 import { TextField, Button, Typography, Paper, Box } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { createPost } from "../../features/postsSlice";
+import { createPost, updatePost } from "../../features/postsSlice";
 
 const Form = () => {
 
@@ -16,10 +16,14 @@ const Form = () => {
             selectedFile: ''
         });
 
-        const handleSubmit = () => {
+        const handleSubmit = (e) => {
             e.preventDefault();
 
-            dispatch(createPost(postData));
+            if (currentId) {
+                dispatch(updatePost({ id: currentId, updatedPost: postData }));
+            } else {
+                dispatch(createPost(postData));
+    }
         }
 
         const clear = () => {

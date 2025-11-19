@@ -9,6 +9,11 @@ export const getPosts = createAsyncThunk ("posts/getPosts", async () => {
 export const createPost = createAsyncThunk ("posts/createPost", async (postData) => {
     const {data} = await api.createPost(postData);
     return data;
+});
+
+export const updatePost = createAsyncThunk ("posts/updatePost", async (id, updatedPost) => {
+    const {data} = await api.updatePost(id, updatePost);
+    return data;
 })
 
 const postSlice = createSlice ({

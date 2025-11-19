@@ -4,3 +4,4 @@ const url = "https://verbose-happiness-xrgjgqgvjwpc64w4-5000.app.github.dev/post
 
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);
+export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost)
