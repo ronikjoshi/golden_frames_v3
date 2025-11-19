@@ -26,6 +26,9 @@ const postSlice = createSlice ({
             .addCase(createPost.fulfilled, (state, action) => {
                 state.push(action.payload);
             })
+            .addCase(updatePost.fulfilled, (state,action) => {
+                return state.map((post) => post._id === action.payload._id ? action.payload : post)
+            })
     }
 
 
