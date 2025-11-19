@@ -30,3 +30,7 @@ export const createPost = async (req, res) => {
 
     }
 }
+
+export const updatePost = async (req, res) => {
+    
+}
